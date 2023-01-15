@@ -3,9 +3,10 @@
 #include <iostream>
 
 enum class Animals_e{ BEAR, CAT, CHICHEN};
-enum class Birds_e{EAGLE, DUCK, /*CHICHEN*/}; 
+enum class Birds_e{EAGLE, DUCK, CHICHEN}; 
 
 enum class Colors_e : char {RED='r', BLUE='b', GREEN='g'};
+
 
 void func(int i){
 }
@@ -18,3 +19,5 @@ int main()
             //error: cannot convert 'Animals_e' to 'int'
     std::cout<<"size of Colors_e is "<<sizeof(Colors_e)<<std::endl;
 }
+
+//https://godbolt.org/z/b8Wbfdanq 

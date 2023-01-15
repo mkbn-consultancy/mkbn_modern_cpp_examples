@@ -19,4 +19,4 @@ struct Foo{
     
 private:
     int _m;
-}
+};

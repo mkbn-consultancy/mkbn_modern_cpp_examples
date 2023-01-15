@@ -1,5 +1,7 @@
+
 //-------- MKBN Training and Consultancy --------//
 //--------------- miri@mkbn.co.il ---------------//
+
 #include <iostream>
 
 int fun1() { return 10; }

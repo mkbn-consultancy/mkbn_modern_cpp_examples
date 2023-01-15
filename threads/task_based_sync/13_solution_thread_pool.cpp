@@ -10,6 +10,7 @@
 #include <functional>
 #include <stdexcept>
 #include <set>
+#include <iostream>
 
 std::set<int,std::less<int>>
 //includes for testing:

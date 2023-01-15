@@ -4,13 +4,17 @@
 
 #include <iostream>
 
+
 enum Animals_e{ BEAR, CAT, CHICHEN};
 enum Birds_e{EAGLE, DUCK, /*CHICHEN*/}; //error! chicken has already declared!
 
 enum Colors_e{RED='r', BLUE='b', GREEN='g'};
 
+
 void func(int i){
 }
+
+
 int main()
 {
     bool b1 = BEAR && DUCK; //what?!    

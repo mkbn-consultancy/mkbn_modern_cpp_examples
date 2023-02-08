@@ -18,6 +18,9 @@ enum class Endian
 	Big,
 	Little
 };
+//std::integral_constant wraps a static constant of specified type. It is the base class for the C++ type traits.
+//template< class T, T v >
+//struct integral_constant;
 using BigEndian = std::integral_constant<Endian, Endian::Big>;
 using LittleEndian = std::integral_constant<Endian, Endian::Little>;
 

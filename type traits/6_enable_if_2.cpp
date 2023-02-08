@@ -57,3 +57,4 @@ int main(){
     bar(x);
 }
 
+//https://godbolt.org/z/TPvxhfdob 

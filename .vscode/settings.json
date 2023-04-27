@@ -58,7 +58,8 @@
     "bitset": "cpp",
     "codecvt": "cpp",
     "cstring": "cpp",
-    "iomanip": "cpp"
+    "iomanip": "cpp",
+    "unordered_set": "cpp"
   },
   "C_Cpp_Runner.cCompilerPath": "C:\\Program Files\\mingw-w64_old\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\gcc.exe",
   "C_Cpp_Runner.cppCompilerPath": "C:\\Program Files\\mingw-w64_old\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\g++.exe",

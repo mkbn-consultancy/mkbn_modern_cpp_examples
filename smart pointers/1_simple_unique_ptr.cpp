@@ -46,7 +46,7 @@ private:
 };
 
 template <class T>
-class my_unique_ptr<T[]>
+class my_unique_ptr<T[]> : public my_unique_ptr<T>
 {
 private:
 	T * _ptr = nullptr;

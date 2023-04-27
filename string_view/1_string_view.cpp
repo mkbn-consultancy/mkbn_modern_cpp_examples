@@ -23,8 +23,10 @@ int testStringView()
   std::experimental::string_view more{ str }; // view of the same "hello"
  
   text[0] = 'H';
+  auto a = (char*)(&str[0]);
+  a[0] = 'Q';
 
-  std::cout << text << ' ' << str << ' ' << more << '\n';
+  std::cout << text << ' ' << str << ' ' << more << str[1] << '\n';
  
   return 0;
 }

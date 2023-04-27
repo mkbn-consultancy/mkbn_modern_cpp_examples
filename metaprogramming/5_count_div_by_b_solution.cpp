@@ -3,10 +3,10 @@
 #include <iostream>
 
 
-template <bool T>
+template <bool Val>
 struct if_div_
 {
-    enum{result = T};
+    enum{result = Val};
 };
 
 // template <>

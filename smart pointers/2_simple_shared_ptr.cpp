@@ -8,7 +8,7 @@ class my_shared_ptr
 {
 public:
 	my_shared_ptr() : _ptr(nullptr), _refCount(new size_t(0)){}
-	my_shared_ptr(T * ptr) : _ptr(nullptr), _refCount(new size_t(1)){}
+	my_shared_ptr(T * ptr) : _ptr(ptr), _refCount(new size_t(1)){}
 
 	/*** Copy Semantics ***/
 	// copy constructor

@@ -4,36 +4,6 @@
 
 //TODO:
 //implement the is_pointer_check boolean function
-template<typename T>
-struct is_pointer
-{
-    static const bool value = false;
-};
-
-template<typename T>
-struct is_pointer<T*>
-{
-    static const bool value = true;   
-};
-
-// template<typename T>
-// bool is_pointer_check(T x)
-// {
-//     return is_pointer<decltype(x)>::value;
-// }
-
-template<typename T>
-bool is_pointer_check(T x)
-{
-    return false;
-}
-
-template<typename T>
-bool is_pointer_check(T* x)
-{
-    return true;
-}
-
 int* testFunc(){
     static int x;
     return &x;

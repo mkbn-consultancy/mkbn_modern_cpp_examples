@@ -22,20 +22,23 @@ auto get_object() {
 }
 
 int main() {
+    auto x = std::unique_ptr<MyObject>();
+    std::cout<<"unique ptr size with no deleter: "<<sizeof(x)<<std::endl;
+    
     {
     auto pObj = get_object();
-    std::cout << sizeof(pObj) << std::endl;
+    std::cout << "size of object with lambda deleter: "<<sizeof(pObj) << std::endl;
     }
 
     {
     auto pObjWithFuncDeleter = std::unique_ptr<MyObject, DeleterFunctionObject>(
         new MyObject, DeleterFunctionObject());
-    std::cout << sizeof(pObjWithFuncDeleter) << std::endl;
+    std::cout << "size of object with function object deleter: "<<sizeof(pObjWithFuncDeleter) << std::endl;
     }
 
     {
     auto pObjWithFuncObject = std::unique_ptr<MyObject, void (*)(MyObject*)>(
         new MyObject, deleter_function);
-    std::cout << sizeof(pObjWithFuncObject) << std::endl;
+    std::cout << "size of object with func ptr deleter: "<<sizeof(pObjWithFuncObject) << std::endl;
     }
 }

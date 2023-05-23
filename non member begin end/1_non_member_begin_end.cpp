@@ -26,7 +26,7 @@ int main()
     std::vector<int> vi { 1,2,3 };
 
     //printing all elements:
-    // print_container_elements(vi);
+    print_container_elements(vi);
 
     int arr[] = { 1,2,3 };
     print_container_elements(arr);

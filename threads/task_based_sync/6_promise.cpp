@@ -44,7 +44,7 @@ int main()
 
     if(res.valid()){
         auto sum = res.get();
-        std::cout<<"[main] task finised, sum is "<<sum<<std::endl;
+        std::cout<<"[main] task finished, sum is "<<sum<<std::endl;
     }
     std::cout<<"------------------------\n";
 }

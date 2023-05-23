@@ -38,8 +38,16 @@ int main()
 {
     // creates a my_unique_ptr object holding a 'Box' object
     my_unique_ptr<Data> box1(new Data{1541});
+
     // creates a my_unique_ptr object holding an array of 'Box' objects
     my_unique_ptr<Data[]> dataArr(new Data[3]{1476,9873,8764});
     Data d1 = dataArr[0]; // index based access
+
+    // my_unique_ptr<Data> box2 = box1; //should not compile!!
+    // my_unique_ptr<Data> box2(box1); //should not compile!!
+
+    my_unique_ptr<Data> box2(new Data{1541});
+    // box2 = box1; //should not compile!!!
+
     return 0;
 }

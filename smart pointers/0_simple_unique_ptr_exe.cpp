@@ -48,6 +48,7 @@ int main()
 
     my_unique_ptr<Data> box2(new Data{1541});
     // box2 = box1; //should not compile!!!
-
+    box2 = std::move(box1);
+    
     return 0;
 }

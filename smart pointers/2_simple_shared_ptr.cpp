@@ -25,6 +25,7 @@ public:
 	// copy assignment
 	my_shared_ptr& operator=(const my_shared_ptr & obj){
 		// cleanup any existing data
+
 		// Assign incoming object's data to this object
 		this->ptr = obj.ptr; // share the underlying pointer
 		this->refCount = obj.refCount; // share refCount
@@ -41,7 +42,9 @@ public:
 	{
 		this->ptr = dyingObj.ptr; // share the underlying pointer
 		this->refCount = dyingObj.refCount; // share refCount
-		dyingObj.ptr = dyingObj.refCount = nullptr; // clean up dyingObj
+		dyingObj.ptr = nullptr;
+		dyingObj.refCount = nullptr; // clean up dyingObj
+
 	}
 	// move assignment
 	my_shared_ptr& operator=(my_shared_ptr && dyingObj)
@@ -50,7 +53,8 @@ public:
 		
 		this->ptr = dyingObj.ptr; // share the underlying pointer
 		this->refCount = dyingObj.refCount; // share refCount
-		dyingObj.ptr = dyingObj.refCount = nullptr; // clean up dyingObj
+		dyingObj.ptr = nullptr;
+		dyingObj.refCount = nullptr; // clean up dyingObj
 	}
 
 	~my_shared_ptr() {

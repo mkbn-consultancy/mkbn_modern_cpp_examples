@@ -3,6 +3,7 @@
 #include <iostream>
 
 //TODO:
+
 //implement the is_pointer_check boolean function
 int* testFunc(){
     static int x;

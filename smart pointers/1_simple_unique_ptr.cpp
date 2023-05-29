@@ -8,7 +8,7 @@ template <class T>
 class my_unique_ptr
 {
 private:
-	T * _ptr = nullptr;
+	T * _ptr{};
 public:
 	my_unique_ptr() : _ptr(nullptr) {}
 	my_unique_ptr(T * ptr) : _ptr(ptr) {}
@@ -32,7 +32,7 @@ public:
 
             // Transfer ownership of the memory pointed by dyingObj to this object
             _ptr = dyingObj._ptr;
-            dyingObj.ptr = nullptr;
+            dyingObj._ptr = nullptr;
         }
 	}
 	T* operator->() { return _ptr; }
@@ -40,8 +40,7 @@ public:
 
 private:
 	void cleanup(){
-		if (_ptr != nullptr)
-			delete _ptr;
+		delete _ptr;
 	}
 };
 
@@ -78,8 +77,8 @@ public:
 		dyingObj.ptr = nullptr;
 	}
 
-	T* operator->() { return _ptr; }
-	T& operator*() { return *(_ptr); }
+	// T* operator->() { return _ptr; }
+	// T& operator*() { return *(_ptr); }
 
 	T& operator[](int index){
 		if(index < 0){
@@ -119,6 +118,8 @@ int main()
 
     my_unique_ptr<Data> box2(new Data{1541});
     // box2 = box1; //should not compile!!!
+	box2 = std::move(box1);
+	auto x = (*box1);
 
     return 0;
 }

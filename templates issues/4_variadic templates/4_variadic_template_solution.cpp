@@ -6,8 +6,9 @@
 
 struct Employee
 {
-    Employee(const std::string& name, int id, int salary) : 
-        _name(name), _id(id), _salary(salary){}
+    //Get params by value as Sink Parameters
+    Employee(std::string name, int id, int salary) : 
+        _name(std::move(name)), _id(id), _salary(salary){}
 
     void print() const{
         std::cout<<"name: "<<_name<<", id: "<<_id<<", salary: "<<_salary<<std::endl;
@@ -20,8 +21,9 @@ private:
 
 struct Contact
 {
-    Contact(const std::string& name, const std::string& phoneNum) :
-        _name(name), _phoneNum(phoneNum){}
+    //Get params by value as Sink Parameters
+    Contact(std::string name, std::string phoneNum) :
+        _name(std::move(name)), _phoneNum(std::move(phoneNum)){}
 
     void print(){
         std::cout<<"name: "<<_name<<", phone number: "<<_phoneNum<<std::endl;

@@ -11,11 +11,12 @@
 #include <stdexcept>
 #include <set>
 #include <iostream>
+#include <chrono>
 
-std::set<int,std::less<int>>
+// std::set<int,std::less<int>>
 //includes for testing:
 #include <iostream> //for testing
-using namespace std::chrono_literals; 
+// using namespace std::chrono_literals; 
 
 
 class ThreadPool {
@@ -59,6 +60,8 @@ void ThreadPool::createThreads(size_t poolSize)
 				//this thread will run this code
                 for(;;){ //will take from queue a task and run it
                     std::function<void()> task;
+
+
                     {
                         std::unique_lock<std::mutex> lock(this->_queue_mutex);
 						//The execution of the current thread (which shall have locked lck's mutex) 
@@ -158,7 +161,7 @@ int main()
         results.emplace_back(
             pool2.addTask([i] {
                 std::cout << "hello " << i << std::endl;
-                std::this_thread::sleep_for(1s);
+                // std::this_thread::sleep_for(10);
                 std::cout << "world " << i <<std::endl;
                 return i*i;
             })
@@ -171,3 +174,4 @@ int main()
 
     return 0;
 }
+

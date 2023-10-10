@@ -9,17 +9,18 @@ struct if_div_
     enum{result = Val};
 };
 
+// template <bool Val>
+// struct if_div_;
 // template <>
 // struct if_div_<true>
 // {
 //     enum{result=1};
 // };
-
 // template <>
 // struct if_div_<false>
 // {
 //     enum{result=0};
-// };
+};
 
 //---------
 

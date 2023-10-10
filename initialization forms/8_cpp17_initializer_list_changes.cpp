@@ -13,9 +13,9 @@ int main()
     auto c = {4, 2}; // std::initializer_list<int>
     std::cout<<typeid(c).name()<<std::endl;
 
-    // //since C++17:
-    // auto a = {42};   // copy init: std::initializer_list<int>
-    // auto b {42};     // direct init: int
-    // auto c = {4, 2}; // copy init: std::initializer_list<int>
-    // //auto d {4, 2};   // direct init: compilation error
+    //since C++17:
+    auto x = {42};   // copy init: std::initializer_list<int>
+    auto y {42};     // direct init: int
+    auto z = {4, 2}; // copy init: std::initializer_list<int>
+    //auto q {4, 2};   // direct init: compilation error
 }

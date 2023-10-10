@@ -1,6 +1,7 @@
 //-------- MKBN Training and Consultancy --------//
 //--------------- miri@mkbn.co.il ---------------//
 #include <iostream>
+#include <type_traits>
 
 template< class T > 
 struct is_pointer{ 
@@ -28,7 +29,7 @@ int main()
     int* p = &x;
     const int* pc = &x;
 
-    std::cout<<"is x a pointer? "<<is_pointer_check(x)<<std::endl;
+    std::cout<<"is x a pointer? "<<std::boolalpha<<is_pointer_check(x)<<std::endl;
     std::cout<<"is p a pointer? "<<is_pointer_check(p)<<std::endl;
     std::cout<<"is pc a pointer? "<<is_pointer_check(pc)<<std::endl;
     std::cout<<"is testFunc a pointer? "<<is_pointer_check(testFunc())<<std::endl;

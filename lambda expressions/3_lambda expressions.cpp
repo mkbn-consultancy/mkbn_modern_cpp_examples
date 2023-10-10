@@ -8,7 +8,7 @@ struct sumUp {
 	int& _sum;
 public:
 	sumUp(int sum) : _sum(sum) {}
-	void operator()(int x) {
+	void operator()(int x) const {
 		_sum += x;
 	}
 };

@@ -5,8 +5,6 @@
 #include <algorithm>
 #include <set>
 
-std::set<int,
-
 bool isOdd(int x){
 	return x%2==1;
 }

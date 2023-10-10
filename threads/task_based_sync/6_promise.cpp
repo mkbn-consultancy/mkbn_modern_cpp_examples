@@ -21,10 +21,6 @@ int sumUntil(std::promise<int>& num){
     return result;
 }
 
-std::string SecondFunc(std::future<int>& param){
-    auto x = param.get();
-}
-
 int main()
 {
     std::cout<<"------------------------\n";
@@ -32,7 +28,6 @@ int main()
  
     std::cout<<"[main] create the task\n";
     std::future<int> res = std::async(std::launch::async, sumUntil, std::ref(num));
-    std::future<std::string> res2 = std::async(SecondFunc,std::ref(res));
 
     //num is not ready test since we didn't call set_value yet
     //thus the task is blocked and wait

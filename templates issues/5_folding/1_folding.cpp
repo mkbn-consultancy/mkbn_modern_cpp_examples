@@ -46,3 +46,5 @@ int main()
     std::cout<<"are all positive? "<<std::boolalpha
                     << isAllPositive(1,2,-3,5,-4)<<std::endl;
 }
+
+

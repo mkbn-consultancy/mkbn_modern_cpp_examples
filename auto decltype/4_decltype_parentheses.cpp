@@ -2,32 +2,20 @@
 //--------------- miri@mkbn.co.il ---------------//
 #include <iostream>
 
-struct A {double x;};
+int main(){
+    int a = 2;
 
-int main()
-{
-    A aObj;
+    decltype(a) x1 = a;
 
-    A* a = &aObj;
+    decltype((a)) x2 = a;
 
-    decltype(a->x) y;   //y is double (declared type)
-    y = 3.4;
+    decltype(a)& x3 = a;
 
-    decltype((a->x)) z = y; //z is double& (lvalue expression)
+    decltype(5) x4 = a;
 
-    std::cout<<"y = "<<y<<" , z = "<<z<<std::endl; 
+    decltype ((5)) x5 = a;
 
-    z += 1.5;
+    decltype((5))& x6 = a;
 
-    std::cout<<"y = "<<y<<" , z = "<<z<<std::endl; 
-
-    //------- declare a const pointer -------
-    const A* ca = &aObj;
-
-    decltype(ca->x) r;  //double
-
-    decltype((ca->x)) s = r; //const double& 
-
-    //s += 1.5;   //error since s is const!
-    decltype((a)) q = a;
+    //see the types in c++ insights: https://cppinsights.io/s/90052556
 }

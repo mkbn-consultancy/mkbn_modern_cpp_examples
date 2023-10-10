@@ -41,3 +41,4 @@ int main(){
     // std::cout<<&(bArr[0])<<", "<<&(bArr[1])<<" => "<<p1-p0<<std::endl;
 }
 
+//https://godbolt.org/z/eeWcne6bE

@@ -11,7 +11,7 @@ struct algorithm_selector
   template< typename T > 
   static void implementation( T& object ) 
   { 
-	//implement the algorithm operating on "object" here 
+	  //implement the algorithm operating on "object" here 
      std::cout<<"default implementation\n";
   } 
 };
@@ -29,7 +29,7 @@ struct algorithm_selector< true >
 //---------------------------------------------------
 
 class ObjectA{
-    //... has nothig special ...
+    //... has nothing special ...
 };
 
 class ObjectB { 

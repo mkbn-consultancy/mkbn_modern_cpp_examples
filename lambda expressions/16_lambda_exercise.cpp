@@ -2,14 +2,19 @@
 Modern C++ Course: Lambda Expressions Hands-On Exercise
 Create lambda expressions for the following functions:
 */
+#include <type_traits>
+#include <iostream>
 
+int main(){
 // 1.	T max(T, T); - Returns the largest element between two parameters.
 
 // 2.	bool isGreater(T, T) ; - Return true if first argument is greater than the second
 
 // 3.	std::pair<T,T> MinMax(ItrBegin, ItrEnd) ; - Accept iterators of any container and return the largest and smallest element from that container.
 
-// 4.	Declare a lambda expression that can get any type as a parameter, and return the value+1 if it gets an integer, and the string "ooops" otherwise. You should use if-constexpr + type traits (use google…).
+// 4.	Declare a lambda expression that can get any type as a parameter, 
+//      and returns the value+1 if it gets an integer, and the string "ooops" otherwise. 
+//      You should use if-constexpr + type traits (use google…).
 // Example: 
 // auto lambda = …
 // auto result1 = lambda(123); //result1 = 124
@@ -31,3 +36,4 @@ struct apply_discount{};
 // std::cout<<lambda(addTaxObj , 10);	//104.5 (+10% tax)
 
 // Try to implement the lambda using if-constexpr feature (C++17).
+}

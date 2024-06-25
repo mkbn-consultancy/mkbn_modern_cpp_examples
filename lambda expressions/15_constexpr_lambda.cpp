@@ -9,5 +9,3 @@ int main(){
     };
     std::cout<<f(2,3)<<std::endl;
 }
-
-//https://godbolt.org/z/eG3ad3 

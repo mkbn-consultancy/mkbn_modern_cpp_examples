@@ -61,9 +61,9 @@
     "iomanip": "cpp",
     "unordered_set": "cpp"
   },
-  "C_Cpp_Runner.cCompilerPath": "C:\\Program Files\\mingw-w64_old\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\gcc.exe",
-  "C_Cpp_Runner.cppCompilerPath": "C:\\Program Files\\mingw-w64_old\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\g++.exe",
-  "C_Cpp_Runner.debuggerPath": "C:\\Program Files\\mingw-w64_old\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\gdb.exe",
+  "C_Cpp_Runner.cCompilerPath": "C:/Program Files/mingw-w64_old/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/gcc.exe",
+  "C_Cpp_Runner.cppCompilerPath": "C:/Program Files/mingw-w64_old/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/g++.exe",
+  "C_Cpp_Runner.debuggerPath": "C:/Program Files/mingw-w64_old/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/gdb.exe",
   "C_Cpp_Runner.makePath": "C:\\Program Files\\mingw-w64_old\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\mingw32-make.exe",
   "C_Cpp_Runner.warnings": [
     "-Wall",
@@ -77,5 +77,34 @@
   "C_Cpp_Runner.cppStandard": "",
   "C_Cpp_Runner.excludeSearch": [],
   "C_Cpp_Runner.enableWarnings": true,
-  "C_Cpp_Runner.warningsAsError": false
+  "C_Cpp_Runner.warningsAsError": false,
+  "C_Cpp_Runner.msvcBatchPath": "",
+  "C_Cpp_Runner.useMsvc": false,
+  "C_Cpp_Runner.includeSearch": [
+    "*",
+    "**/*"
+  ],
+  "C_Cpp_Runner.useAddressSanitizer": false,
+  "C_Cpp_Runner.showCompilationTime": false,
+  "code-runner.runInTerminal": true,
+  "C_Cpp_Runner.msvcWarnings": [
+    "/W4",
+    "/permissive-",
+    "/w14242",
+    "/w14287",
+    "/w14296",
+    "/w14311",
+    "/w14826",
+    "/w44062",
+    "/w44242",
+    "/w14905",
+    "/w14906",
+    "/w14263",
+    "/w44265",
+    "/w14928"
+  ],
+  "C_Cpp_Runner.useUndefinedSanitizer": false,
+  "C_Cpp_Runner.useLeakSanitizer": false,
+  "C_Cpp_Runner.useLinkTimeOptimization": false,
+  "C_Cpp_Runner.msvcSecureNoWarnings": false
 }

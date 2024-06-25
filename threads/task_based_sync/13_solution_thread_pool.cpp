@@ -13,10 +13,8 @@
 #include <iostream>
 #include <chrono>
 
-// std::set<int,std::less<int>>
 //includes for testing:
 #include <iostream> //for testing
-// using namespace std::chrono_literals; 
 
 
 class ThreadPool {
@@ -46,21 +44,19 @@ private:
 ThreadPool::ThreadPool(size_t poolSize)
     :   _stop(false)
 {
-    std::cout<<"[ThreadPool] inside constructor\n";
+    std::cout<<"[ThreadPool] inside constructor"<<std::endl;
     createThreads(poolSize);
-
 }
 
 void ThreadPool::createThreads(size_t poolSize)
 {
-    std::cout<<"[ThreadPool] inside createThreads...";
+    std::cout<<"[ThreadPool] inside createThreads..."<<std::endl;
     for(size_t i = 0;i<poolSize;++i){
        _workers.emplace_back( //Inserts a new element at the end of the vector. 
             [this]{
 				//this thread will run this code
                 for(;;){ //will take from queue a task and run it
                     std::function<void()> task;
-
 
                     {
                         std::unique_lock<std::mutex> lock(this->_queue_mutex);
@@ -85,14 +81,14 @@ void ThreadPool::createThreads(size_t poolSize)
             }
         );
     }
-    std::cout<<"done!\n";
+    std::cout<<"done!"<<std::endl;
 }
 
 template<class F, class... Args>
 auto ThreadPool::addTask(F&& f, Args&&... args) 
     -> std::future<typename std::result_of<F(Args...)>::type>
 {
-    std::cout<<"[ThreadPool] inside addTask...\n";
+    std::cout<<"[ThreadPool] inside addTask..."<<std::endl;
 	//This function will return the result of the F with args.
     using return_type = typename std::result_of<F(Args...)>::type;
 	//A packaged_task wraps a callable element and allows its result to be retrieved asynchronously.
@@ -134,23 +130,36 @@ inline ThreadPool::~ThreadPool()
 //////////////////////////////////////////////////////////////
 
 void func1() {
-	std::cout << "in func1\n";
+	std::cout << "in func1"<<std::endl;
 }
 
 void func2(int i) {
 	std::cout << "in func2 with parameter " << i << std::endl;
 }
 
+int func3(int x, double y, std::string s){
+	std::cout << "in func3 with parameters " << x 
+            << "," << y 
+            << "," << s
+            <<std::endl;
+    return 5;
+}
+
 int main()
 {
-    std::cout<<"[main] creating a thread pool - example 1\n";
+    std::cout<<"[main] creating a thread pool - example 1"<<std::endl;
 	//example 1
 	ThreadPool pool1(2);
 	pool1.addTask(func1);
 	pool1.addTask(func2, 3);
-    
-    std::cout<<"----------------------------\n";
-    std::cout<<"[main] creating a thread pool - example 2\n";
+    auto result = pool1.addTask(func3, 3, 4.6, "hello");
+
+    int x = result.get();
+
+    std::cout<<"result of func3 is: "<<x<<std::endl;
+
+    std::cout<<"----------------------------"<<std::endl;
+    std::cout<<"[main] creating a thread pool - example 2"<<std::endl;
 	//example 2
     ThreadPool pool2(4);
     std::vector< std::future<int> > results;

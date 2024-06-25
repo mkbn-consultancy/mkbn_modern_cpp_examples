@@ -61,23 +61,23 @@ void test_if_max_()
 /////////////////////////////
 
 template <bool isEven>
-struct if_even_;
+struct if_div_;
 
 template <>
-struct if_even_<true>
+struct if_div_<true>
 {
     enum{result=true};
 };
 
 template <>
-struct if_even_<false>
+struct if_div_<false>
 {
     enum{result=false};
 };
 
 void testIf_even_()
 {
-    std::cout<<"The number 12 is even? "<<if_even_<(12%2==0)>::result<<std::endl;
+    std::cout<<"The number 12 is even? "<<if_even_<(N%B==0)>::result<<std::endl;
 }
 /////////////////////////////
 

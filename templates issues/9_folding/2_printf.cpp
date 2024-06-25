@@ -5,6 +5,8 @@
 
 template<typename ...Args>
 void printf(Args&&... args) {
+    //TODO: Rewrite the following implementation to print
+    //a comma between the elements
     (std::cout <<  ... <<  std::forward<Args>(args)) << std::endl;
 }
 

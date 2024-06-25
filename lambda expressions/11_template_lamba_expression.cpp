@@ -6,7 +6,7 @@
 //C++11
 template<typename T>
 void func(T t){
-    //declaring a lambda whos parameter is of type T
+    //declaring a lambda who's parameter is of type T
     auto fn = [](decltype(t) t){ return t;};
     //invoke the lambda with parameter t
     std::cout << fn(t) << std::endl;
